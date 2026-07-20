@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Resilient Homestead Blueprint | Faith, F-150 Mods & Rural Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+        
+        :root {
+            --primary-green: #1a3c34;
+            --accent-brown: #5c4033;
+            --warm-cream: #f5f0e6;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .section-header {
+            font-size: 2.25rem;
+            line-height: 1.1;
+        }
+
+        .nav-scrolled {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .benefit-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .cta-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(26 60 52 / 0.3), 0 4px 6px -4px rgb(26 60 52 / 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        .modern-shadow {
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        .earthy-bg {
+            background-color: #1a3c34;
+        }
+
+        .warm-text {
+            color: #f5f0e6;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: #f5f0e6;
+            color: #1a3c34;
+        }
+
+        .bible-verse {
+            font-style: italic;
+            border-left: 4px solid #5c4033;
+            padding-left: 1rem;
+        }
+
+        .sales-page {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(26, 60, 52, 0.65), rgba(26, 60, 52, 0.45));
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #1a3c34;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f5f0] text-[#2c2522]">
+    <!-- NAV -->
+    <nav id="navbar" class="bg-white border-b border-[#e8e0d5] sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-[#1a3c34] rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-mountain text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-bold text-2xl tracking-tighter text-[#1a3c34]">Resilient Homestead</span>
+                        <span class="block text-[10px] text-[#5c4033] -mt-1 tracking-[2px]">BLUEPRINT</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#problem" class="nav-link text-[#5c4033] hover:text-[#1a3c34]">The Challenge</a>
+                    <a href="#solution" class="nav-link text-[#5c4033] hover:text-[#1a3c34]">What's Inside</a>
+                    <a href="#benefits" class="nav-link text-[#5c4033] hover:text-[#1a3c34]">Your Transformation</a>
+                    <a href="#pricing" class="nav-link text-[#5c4033] hover:text-[#1a3c34]">Pricing</a>
+                </div>
+
+                <div class="flex items-center gap-x-4">
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-[#5c4033] hover:bg-[#f5f0e6] rounded-xl transition-colors"
+                            aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                    
+                    <!-- CTA Button -->
+                    <a href="#pricing"
+                       class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-[#1a3c34] hover:bg-[#142e28] text-white text-sm font-semibold rounded-2xl transition-all active:scale-[0.985]">
+                        Get the Blueprint — $67
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-[#e8e0d5]">
+        <div class="px-6 py-4 flex flex-col gap-y-1 text-sm font-medium">
+            <a href="#problem" class="py-3 px-4 text-[#5c4033] hover:bg-[#f5f0e6] rounded-2xl">The Challenge</a>
+            <a href="#solution" class="py-3 px-4 text-[#5c4033] hover:bg-[#f5f0e6] rounded-2xl">What's Inside</a>
+            <a href="#benefits" class="py-3 px-4 text-[#5c4033] hover:bg-[#f5f0e6] rounded-2xl">Your Transformation</a>
+            <a href="#pricing" class="py-3 px-4 text-[#5c4033] hover:bg-[#f5f0e6] rounded-2xl">Pricing &amp; Guarantee</a>
+            <div class="pt-2">
+                <a href="#pricing"
+                   class="flex w-full items-center justify-center px-6 py-4 bg-[#1a3c34] text-white text-sm font-semibold rounded-2xl">
+                    Get Instant Access — $67
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <header class="relative h-[100dvh] min-h-[620px] flex items-center justify-center overflow-hidden bg-[#1a3c34]">
+        <!-- Hero Background Image -->
+        <div class="absolute inset-0">
+            <img src="imagine_images/6UO5o.jpg" 
+                 alt="Rural Idaho homestead at golden hour with F-150 truck and concrete foundation under construction, open Bible in foreground"
+                 class="w-full h-full object-cover opacity-90">
+            <div class="hero-overlay absolute inset-0"></div>
+        </div>
+        
+        <div class="relative max-w-5xl mx-auto px-6 text-center z-10 pt-8">
+            <div class="inline-flex items-center gap-x-2 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-3xl mb-6 text-xs tracking-[1.5px] font-semibold text-[#1a3c34]">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>FOR CHRISTIAN VETERANS, TRUCK OWNERS &amp; RURAL BUILDERS</span>
+            </div>
+            
+            <h1 class="heading-serif text-6xl md:text-7xl lg:text-7xl text-white tracking-tighter leading-none mb-6">
+                Build Your Legacy.<br>
+                <span class="text-[#d4c3a8]">Strengthen Your Faith.</span><br>
+                Mod Your Truck for Real Life.
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-xl md:text-2xl text-white/90 mb-10 tracking-tight">
+                The complete practical blueprint from a 100% disabled veteran who built rental properties, 
+                permitted his own foundation in northern Idaho, customized his F-150 for Starlink &amp; homestead life, 
+                and found resilience through faith in the process.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pricing"
+                   class="cta-button group inline-flex items-center justify-center gap-x-3 w-full sm:w-auto px-10 py-5 bg-white text-[#1a3c34] hover:bg-[#f5f0e6] font-bold text-lg rounded-3xl shadow-xl active:scale-[0.985] transition-all">
+                    <span>Get the Full Blueprint + Bonuses</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#solution"
+                   class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-5 border border-white/70 hover:bg-white/10 text-white font-semibold rounded-3xl text-lg transition-all">
+                    See What's Inside
+                </a>
+            </div>
+            
+            <div class="mt-8 flex items-center justify-center gap-x-6 text-xs text-white/70">
+                <div class="flex items-center gap-x-1.5">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Instant PDF Download</span>
+                </div>
+                <div class="flex items-center gap-x-1.5">
+                    <i class="fa-solid fa-check"></i>
+                    <span>60-Day Guarantee</span>
+                </div>
+                <div class="flex items-center gap-x-1.5">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Printable Templates Included</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block">
+            <a href="#problem" class="flex flex-col items-center text-white/60 hover:text-white transition-colors text-xs tracking-widest">
+                <span>SCROLL TO BEGIN</span>
+                <i class="fa-solid fa-chevron-down mt-1 text-lg animate-bounce"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="bg-white border-b border-[#e8e0d5] py-4">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-sm text-[#5c4033]">
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-truck text-[#1a3c34]"></i>
+                    <span class="font-medium">F-150 &amp; Truck Owners</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-home text-[#1a3c34]"></i>
+                    <span class="font-medium">Aspiring Homesteaders</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-cross text-[#1a3c34]"></i>
+                    <span class="font-medium">Christian Men in Midlife</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-medal text-[#1a3c34]"></i>
+                    <span class="font-medium">U.S. Veterans &amp; VA Rated</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROBLEM / AGITATION -->
+    <section id="problem" class="max-w-5xl mx-auto px-6 pt-16 pb-12">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <span class="inline-block px-4 py-1 bg-[#f5f0e6] text-[#5c4033] text-xs tracking-[2px] font-semibold rounded-3xl mb-4">THE REALITY MOST GUIDES IGNORE</span>
+            <h2 class="section-header heading-serif text-[#1a3c34] tracking-tighter">You've watched the YouTube videos.<br>You've bought the parts.<br>But something's still missing.</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-3xl p-8 border border-[#e8e0d5]">
+                <div class="feature-icon mb-6"><i class="fa-solid fa-tools text-2xl"></i></div>
+                <h3 class="font-semibold text-xl mb-3">Costly mistakes on the land</h3>
+                <p class="text-[#5c4033]">Permits, soil, backfill, stem walls, drainage — one wrong decision can cost thousands and months of delays. Generic advice doesn't account for your specific county or disability limitations.</p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 border border-[#e8e0d5]">
+                <div class="feature-icon mb-6"><i class="fa-solid fa-truck-pickup text-2xl"></i></div>
+                <h3 class="font-semibold text-xl mb-3">Truck mods that don't fit real life</h3>
+                <p class="text-[#5c4033]">You added lights, a lift, or a bed cover... but now it struggles with towing the trailer, Starlink won't stay connected on the aluminum body, or the coding changes broke something else. You need proven, homestead-specific setups.</p>
+            </div>
+            <div class="bg-white rounded-3xl p-8 border border-[#e8e0d5]">
+                <div class="feature-icon mb-6"><i class="fa-solid fa-heart text-2xl"></i></div>
+                <h3 class="font-semibold text-xl mb-3">The quiet weight of building alone</h3>
+                <p class="text-[#5c4033]">Midlife, chronic pain, past grief, rural isolation. You want to build something meaningful — a homestead, a legacy, a life of faith — but the emotional and spiritual side gets ignored in every "how-to" manual.</p>
+            </div>
+        </div>
+        
+        <div class="mt-10 text-center">
+            <p class="text-lg text-[#5c4033] max-w-2xl mx-auto">This isn't another generic homesteading book or mod list. It's the integrated blueprint I wish existed when I started — practical steps + the faith and resilience to actually finish what you begin.</p>
+        </div>
+    </section>
+
+    <!-- AUTHOR / STORY -->
+    <section class="bg-[#1a3c34] py-16 text-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-x-12 items-center">
+                <div class="md:col-span-5 mb-10 md:mb-0">
+                    <div class="inline-block px-5 py-1.5 bg-white/10 rounded-3xl text-xs tracking-widest mb-4">MY JOURNEY</div>
+                    <h2 class="heading-serif text-5xl tracking-tighter leading-none">I built this because I needed it first.</h2>
+                </div>
+                <div class="md:col-span-7 text-lg text-white/90 space-y-6">
+                    <p>I'm a U.S. veteran with a 100% VA disability rating. I've navigated service-connected back pain, mobility challenges, and the VA claims process while trying to build a stable future.</p>
+                    <p>Through my LLC I own and manage rental properties. I planned and permitted a 20x30 concrete foundation with stem walls in northern Idaho's panhandle. I customized my F-150 for Starlink Mini (yes, on aluminum), FORScan coding for practical features, camping setups, and better aerodynamics.</p>
+                    <p>Along the way I cared for dogs on rural property, dealt with the deep loneliness and grief that can hit in midlife, and leaned hard into faith — repentance, prayer, Scripture, and the hope of Jesus — to keep going when it felt like life was on the line.</p>
+                    <p class="font-medium text-[#d4c3a8]">This guide contains the exact processes, costs, templates, mod details, and biblical encouragement that helped me move forward. I created it so you don't have to figure it all out alone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION / WHAT'S INSIDE -->
+    <section id="solution" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <span class="px-4 py-1 bg-[#f5f0e6] text-[#5c4033] text-xs tracking-[2px] font-semibold rounded-3xl">THE COMPLETE SYSTEM</span>
+            <h2 class="section-header heading-serif text-[#1a3c34] tracking-tighter mt-3">Everything you need in one practical, faith-grounded guide</h2>
+            <p class="mt-4 text-xl text-[#5c4033] max-w-2xl mx-auto">120+ pages of actionable content + ready-to-use printable templates and worksheets</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Main Guide -->
+            <div class="bg-white rounded-3xl p-9 border border-[#e8e0d5] modern-shadow">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <div class="w-12 h-12 bg-[#1a3c34] text-white rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-book text-3xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs tracking-widest text-[#5c4033]">CORE CONTENT</span>
+                        <h3 class="text-3xl font-semibold text-[#1a3c34]">The Resilient Homestead Blueprint eBook</h3>
+                    </div>
+                </div>
+                
+                <div class="space-y-5 text-[15px]">
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-[#1a3c34]"><i class="fa-solid fa-check-circle"></i></div>
+                        <div><span class="font-semibold">Foundation &amp; Land Planning:</span> Real Idaho costs, permit process, stem wall decisions, soil/backfill considerations, drainage, and how I approached a 20x30 build as a veteran with mobility limits.</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-[#1a3c34]"><i class="fa-solid fa-check-circle"></i></div>
+                        <div><span class="font-semibold">F-150 Homestead Mods:</span> Starlink Mini install &amp; mounting solutions for aluminum bodies, FORScan coding that actually works for backup camera at speed, auto shut-off disable, VCT, front proximity, bed cover aerodynamics, camping heater setups, and practical towing/off-road considerations.</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-[#1a3c34]"><i class="fa-solid fa-check-circle"></i></div>
+                        <div><span class="font-semibold">Pain, Pacing &amp; Physical Resilience:</span> How I manage lower back, knee, and nerve issues while doing physical work. Pacing strategies, simple exercises, and the faith mindset that keeps you moving without burnout or despair.</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-[#1a3c34]"><i class="fa-solid fa-check-circle"></i></div>
+                        <div><span class="font-semibold">Faith for the Builder:</span> Biblical encouragement for loneliness, grief, midlife questions, soul care, stewardship of land and resources, and building community in rural areas. Includes key scriptures and prayer practices that sustained me.</div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-[#1a3c34]"><i class="fa-solid fa-check-circle"></i></div>
+                        <div><span class="font-semibold">Business &amp; Legacy Basics:</span> LLC setup for rentals and property, high-level tax/1031 exchange thinking, rental addendums, and structuring things for long-term stability (including considerations for family).</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonuses -->
+            <div class="bg-[#f5f0e6] rounded-3xl p-9 border border-[#d4c3a8]">
+                <div class="mb-6">
+                    <span class="px-4 py-1 bg-white text-[#5c4033] text-xs tracking-widest font-semibold rounded-3xl">INSTANT BONUSES</span>
+                    <h3 class="text-3xl font-semibold text-[#1a3c34] mt-3">Printable Tools &amp; Templates</h3>
+                    <p class="text-[#5c4033] mt-1">Fillable PDFs you can print or use digitally — designed for real homestead and truck life.</p>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex gap-4 bg-white/70 p-5 rounded-2xl">
+                        <i class="fa-solid fa-clipboard-list text-2xl text-[#1a3c34] mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Foundation Build Tracker</div>
+                            <div class="text-sm text-[#5c4033]">Task checklist, permit timeline, material log, inspection notes, and budget tracker tailored to small rural builds.</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 bg-white/70 p-5 rounded-2xl">
+                        <i class="fa-solid fa-truck text-2xl text-[#1a3c34] mt-1"></i>
+                        <div>
+                            <div class="font-semibold">F-150 Mod &amp; Maintenance Log</div>
+                            <div class="text-sm text-[#5c4033]">Track FORScan changes, parts installed, coding notes, maintenance schedule, and camping setup configurations.</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 bg-white/70 p-5 rounded-2xl">
+                        <i class="fa-solid fa-calculator text-2xl text-[#1a3c34] mt-1"></i>
+                        <div>
+                            <div class="font-semibold">Homestead Budget &amp; Property Spreadsheet</div>
+                            <div class="text-sm text-[#5c4033]">Simple income/expense tracker for rentals or personal build, including VA/SSDI considerations and long-term planning.</div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 bg-white/70 p-5 rounded-2xl">
+                        <i class="fa-solid fa-book-open text-2xl text-[#1a3c34] mt-1"></i>
+                        <div>
+                            <div class="font-semibold">30-Day Faith &amp; Resilience Journal Pages</div>
+                            <div class="text-sm text-[#5c4033]">Daily prompts combining gratitude, scripture, land stewardship reflections, and honest processing of pain or loneliness — designed for men who build with their hands and hearts.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS / TRANSFORMATION -->
+    <section id="benefits" class="bg-white py-16 border-y border-[#e8e0d5]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="section-header heading-serif text-[#1a3c34] tracking-tighter">When you finish this blueprint, you will...</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="benefit-card bg-[#f8f5f0] rounded-3xl p-8 border border-[#e8e0d5]">
+                    <div class="text-[#1a3c34] mb-4"><i class="fa-solid fa-hard-hat text-3xl"></i></div>
+                    <h4 class="font-semibold text-xl mb-2">Build with confidence, not costly guesswork</h4>
+                    <p class="text-[#5c4033]">Know exactly what questions to ask your county, what a realistic budget looks like for your size build, and how to sequence work around your energy and pain levels.</p>
+                </div>
+                <div class="benefit-card bg-[#f8f5f0] rounded-3xl p-8 border border-[#e8e0d5]">
+                    <div class="text-[#1a3c34] mb-4"><i class="fa-solid fa-truck text-3xl"></i></div>
+                    <h4 class="font-semibold text-xl mb-2">Make your F-150 a true homestead partner</h4>
+                    <p class="text-[#5c4033]">Install and code modifications that actually support your life — reliable Starlink, useful camera and lighting features, better camping capability — without breaking other systems or wasting money.</p>
+                </div>
+                <div class="benefit-card bg-[#f8f5f0] rounded-3xl p-8 border border-[#e8e0d5]">
+                    <div class="text-[#1a3c34] mb-4"><i class="fa-solid fa-pray text-3xl"></i></div>
+                    <h4 class="font-semibold text-xl mb-2">Walk with steadier faith and emotional resilience</h4>
+                    <p class="text-[#5c4033]">Have daily practices and biblical truth to return to when loneliness, grief, or doubt creeps in. Build your homestead as an act of stewardship and worship, not just survival.</p>
+                </div>
+                <div class="benefit-card bg-[#f8f5f0] rounded-3xl p-8 border border-[#e8e0d5]">
+                    <div class="text-[#1a3c34] mb-4"><i class="fa-solid fa-file-invoice-dollar text-3xl"></i></div>
+                    <h4 class="font-semibold text-xl mb-2">Protect and grow what you're building</h4>
+                    <p class="text-[#5c4033]">Understand basic LLC and rental structures, simple tax considerations, and how to think about long-term legacy and stability — especially important on a fixed or VA income.</p>
+                </div>
+                <div class="benefit-card bg-[#f8f5f0] rounded-3xl p-8 border border-[#e8e0d5]">
+                    <div class="text-[#1a3c34] mb-4"><i class="fa-solid fa-paw text-3xl"></i></div>
+                    <h4 class="font-semibold text-xl mb-2">Include your dogs in the homestead vision</h4>
+                    <p class="text-[#5c4033]">Practical tips for safe, healthy dog life on rural property — from fencing and containment to health management and making them part of the daily rhythm.</p>
+                </div>
+                <div class="benefit-card bg-[#f8f5f0] rounded-3xl p-8 border border-[#e8e0d5]">
+                    <div class="text-[#1a3c34] mb-4"><i class="fa-solid fa-users text-3xl"></i></div>
+                    <h4 class="font-semibold text-xl mb-2">Feel less alone in the process</h4>
+                    <p class="text-[#5c4033]">Connect with the reality that other Christian veterans and builders have walked this road. The guide includes encouragement and perspective that generic resources miss.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF / EARLY FEEDBACK -->
+    <section class="max-w-5xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <span class="text-xs tracking-[2px] font-semibold text-[#5c4033]">WHAT EARLY READERS ARE SAYING</span>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-8 rounded-3xl border border-[#e8e0d5]">
+                <div class="flex gap-1 text-[#d4a017] mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="italic text-[#5c4033]">"The FORScan section alone saved me from bricking my truck. The foundation cost breakdown matched what I'm seeing in my county almost exactly. And the faith parts hit different — they're written by someone who's actually lived the struggle."</p>
+                <div class="mt-6 text-sm font-medium">— M. R., F-150 owner &amp; aspiring homesteader, Idaho</div>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-[#e8e0d5]">
+                <div class="flex gap-1 text-[#d4a017] mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="italic text-[#5c4033]">"Finally a guide that doesn't pretend building is easy or that faith fixes everything overnight. The pacing and pain management chapter is gold. I feel seen and equipped at the same time."</p>
+                <div class="mt-6 text-sm font-medium">— J. T., U.S. Army veteran, 80% VA rated</div>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-[#e8e0d5]">
+                <div class="flex gap-1 text-[#d4a017] mb-4">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="italic text-[#5c4033]">"The combination of practical checklists and honest spiritual encouragement is rare. I bought it for the truck mods and foundation info, but the 30-day journal pages have become part of my morning routine. Highly recommend for any Christian man trying to build something real."</p>
+                <div class="mt-6 text-sm font-medium">— D. K., Christian truck owner &amp; small business LLC</div>
+            </div>
+        </div>
+        <p class="text-center text-xs text-[#5c4033] mt-6">*Early feedback from beta readers in F-150, veteran, and Christian homesteading communities. Results and experiences will vary.</p>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="max-w-4xl mx-auto px-6 pb-20">
+        <div class="bg-[#1a3c34] rounded-[3rem] p-10 md:p-14 text-white text-center">
+            <div class="max-w-md mx-auto">
+                <div class="inline-block px-5 py-1 bg-white/10 rounded-3xl text-xs tracking-[2px] mb-4">ONE-TIME PAYMENT • LIFETIME ACCESS</div>
+                
+                <h2 class="heading-serif text-6xl tracking-tighter mb-2">$67</h2>
+                <p class="text-xl text-white/80 mb-8">Complete eBook + All Printable Templates &amp; Worksheets</p>
+                
+                <a href="https://gumroad.com/l/resilient-homestead-blueprint" 
+                   target="_blank"
+                   class="cta-button group mx-auto flex w-full max-w-xs items-center justify-center gap-x-3 bg-white hover:bg-[#f5f0e6] text-[#1a3c34] font-bold text-xl py-6 rounded-3xl transition-all active:scale-[0.985]">
+                    <span>Buy Now — Instant Download</span>
+                    <i class="fa-solid fa-download group-hover:-translate-y-0.5 transition-transform"></i>
+                </a>
+                
+                <div class="mt-6 flex flex-col items-center gap-y-2 text-sm text-white/70">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>60-Day No-Questions Money-Back Guarantee</span>
+                    </div>
+                    <div>Secure checkout via Gumroad • Works on any device</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 text-center text-sm text-[#5c4033]">
+            <p>Prefer Amazon? A full book version is in development for Kindle + paperback. This digital bundle gives you the templates and immediate practical tools today.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+        <h3 class="text-center text-2xl font-semibold mb-8 text-[#1a3c34]">Common Questions</h3>
+        
+        <div class="space-y-4">
+            <details class="bg-white border border-[#e8e0d5] rounded-3xl p-7 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center text-lg">
+                    Is this just theory or actually practical?
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-[#5c4033]"></i>
+                </summary>
+                <p class="mt-4 text-[#5c4033]">Every section comes from real experience — my own foundation planning and permitting in Idaho, actual FORScan codes and Starlink mounting solutions that worked on my F-150, and the exact faith and pacing practices I use daily. You get templates you can print and use immediately.</p>
+            </details>
+            
+            <details class="bg-white border border-[#e8e0d5] rounded-3xl p-7 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center text-lg">
+                    Do I need to be a veteran or have a disability to benefit?
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-[#5c4033]"></i>
+                </summary>
+                <p class="mt-4 text-[#5c4033]">No. The core content on foundations, truck mods, budgeting, and faith resilience is valuable for any Christian man interested in rural living, homesteading, or practical vehicle customization. The veteran perspective and pain management sections simply add depth and honesty that many guides lack.</p>
+            </details>
+            
+            <details class="bg-white border border-[#e8e0d5] rounded-3xl p-7 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center text-lg">
+                    How do I access the files after purchase?
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-[#5c4033]"></i>
+                </summary>
+                <p class="mt-4 text-[#5c4033]">Instant download link sent to your email immediately after purchase. All PDFs are optimized for printing or use on tablet/phone. You also get lifetime access to any future updates I release for this blueprint.</p>
+            </details>
+            
+            <details class="bg-white border border-[#e8e0d5] rounded-3xl p-7 group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center text-lg">
+                    Is this medical, legal, or financial advice?
+                    <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform text-[#5c4033]"></i>
+                </summary>
+                <p class="mt-4 text-[#5c4033]">Absolutely not. This is educational and inspirational content based on my personal experience. Always consult licensed professionals (engineers, contractors, attorneys, doctors, tax advisors, county planning departments) before building, modifying vehicles, or making financial or health decisions. Safety first.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="bg-[#f5f0e6] py-16">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="heading-serif text-5xl tracking-tighter text-[#1a3c34] mb-4">Ready to stop scrolling and start building?</h2>
+            <p class="text-xl text-[#5c4033] mb-8">Your homestead, your truck, your faith, your legacy — they can all move forward together.</p>
+            
+            <a href="#pricing"
+               class="cta-button inline-flex items-center justify-center gap-x-3 px-14 py-6 bg-[#1a3c34] hover:bg-[#142e28] text-white font-bold text-xl rounded-3xl transition-all active:scale-[0.985]">
+                Get the Resilient Homestead Blueprint Now
+            </a>
+            
+            <p class="mt-6 text-sm text-[#5c4033]">Instant access • 60-day guarantee • Join other men building with purpose</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1a3c34] text-white/70 text-sm py-12">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-y-8">
+            <div>
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-mountain text-white"></i>
+                    </div>
+                    <span class="font-semibold text-white tracking-tight">Resilient Homestead Blueprint</span>
+                </div>
+                <p class="max-w-xs">Practical faith + actionable steps for Christian men building rural lives, customized trucks, and lasting legacies.</p>
+            </div>
+            
+            <div class="text-right md:text-left">
+                <div class="font-medium text-white mb-2">Important Disclaimers</div>
+                <p class="max-w-md md:ml-auto">This product shares personal experience and general information only. It is not professional engineering, legal, medical, financial, or permitting advice. Construction, vehicle modifications, and land development involve risk. Always consult qualified professionals and follow all applicable laws and safety standards in your area. Results vary based on individual circumstances, location, skills, and effort.</p>
+                
+                <div class="mt-6 text-xs">
+                    © 2026 Resilient Homestead Blueprint. All rights reserved.<br>
+                    Operated under the author's LLC. Built with faith, dirt, and determination.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#1a3c34');
+        }
+        
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                if (currentScroll > 50) {
+                    navbar.classList.add('nav-scrolled', 'bg-white/95', 'backdrop-blur-lg');
+                } else {
+                    navbar.classList.remove('nav-scrolled', 'bg-white/95', 'backdrop-blur-lg');
+                }
+                
+                lastScroll = currentScroll;
+            });
+        }
+        
+        // Mobile menu
+        function initMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            
+            if (!btn || !menu) return;
+            
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                }
+            });
+            
+            // Close menu when clicking a link
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    const icon = btn.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        e.preventDefault();
+                        const navbarHeight = 80;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Keyboard accessibility for details
+        function initDetailsKeyboard() {
+            document.querySelectorAll('details').forEach(details => {
+                details.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        details.open = !details.open;
+                    }
+                });
+            });
+        }
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind();
+            initNavbar();
+            initMobileMenu();
+            initSmoothScroll();
+            initDetailsKeyboard();
+            
+            // Optional: Track CTA clicks (for future analytics)
+            console.log('%c[Resilient Homestead Blueprint] Sales page initialized successfully.', 'color:#5c4033');
+        }
+        
+        // Boot
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>
