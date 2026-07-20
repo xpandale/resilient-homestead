@@ -11,11 +11,13 @@
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading-serif { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; line-height: 1.1; }
         .pine-green { background-color: #0F2C1F; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; }
+        .modal-content { background: white; color: #0F2C1F; max-width: 620px; margin: 20px; padding: 2.5rem; border-radius: 20px; box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4); }
     </style>
 </head>
 <body class="pine-green text-[#f5f0e6]">
 
-    <!-- NAV -->
+    <!-- NAV & HERO (unchanged) -->
     <nav class="bg-[#0F2C1F] border-b border-white/10 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-x-3">
@@ -28,83 +30,97 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <header class="max-w-5xl mx-auto px-6 pt-20 pb-16 text-center">
         <h1 class="heading-serif text-6xl md:text-7xl tracking-tighter leading-none mb-6">
             Build Your Legacy.<br>
             <span class="text-[#D2B48C]">Strengthen Your Faith.</span>
         </h1>
-        <p class="max-w-xl mx-auto text-xl mb-10 text-white/90">
-            5 powerful lessons from a veteran who built a homestead through faith, pain, and determination.
-        </p>
+        <p class="max-w-xl mx-auto text-xl mb-10 text-white/90">5 powerful lessons from a veteran’s homestead journey.</p>
         <a href="#get" class="inline-block px-12 py-5 bg-[#D2B48C] hover:bg-amber-200 text-[#0F2C1F] font-bold text-2xl rounded-3xl">Get the Blueprint – Only $27</a>
     </header>
 
-    <!-- 5 LESSONS -->
+    <!-- 5 LESSONS - WHITE BOXES -->
     <section id="lessons" class="max-w-6xl mx-auto px-6 py-16">
         <div class="text-center mb-12">
-            <h2 class="heading-serif text-5xl tracking-tighter">My 5 Key Lessons</h2>
+            <h2 class="heading-serif text-5xl tracking-tighter text-white">My 5 Key Lessons</h2>
         </div>
+
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div onclick="openModal(1)" class="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all text-[#0F2C1F]">
                 <h3 class="font-semibold text-2xl mb-4">1. Taking the Leap into the Unknown</h3>
-                <p class="text-white/80">Guided by faith when everything felt uncertain.</p>
+                <p class="text-[#5c4033] text-sm">Click to read preview →</p>
             </div>
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div onclick="openModal(2)" class="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all text-[#0F2C1F]">
                 <h3 class="font-semibold text-2xl mb-4">2. Adjusting to a New Way of Living</h3>
-                <p class="text-white/80">Discovering self-sustainability and peace on the land.</p>
+                <p class="text-[#5c4033] text-sm">Click to read preview →</p>
             </div>
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div onclick="openModal(3)" class="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all text-[#0F2C1F]">
                 <h3 class="font-semibold text-2xl mb-4">3. Tribulations of Life</h3>
-                <p class="text-white/80">Handling grief, relationships, and loneliness while staying focused.</p>
+                <p class="text-[#5c4033] text-sm">Click to read preview →</p>
             </div>
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div onclick="openModal(4)" class="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all text-[#0F2C1F]">
                 <h3 class="font-semibold text-2xl mb-4">4. God Is Always in Control</h3>
-                <p class="text-white/80">Faith lessons that carried me through every storm.</p>
+                <p class="text-[#5c4033] text-sm">Click to read preview →</p>
             </div>
-            <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+            <div onclick="openModal(5)" class="cursor-pointer bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all text-[#0F2C1F]">
                 <h3 class="font-semibold text-2xl mb-4">5. Settling into God’s Promises</h3>
-                <p class="text-white/80">Building a legacy and living out His promises daily.</p>
+                <p class="text-[#5c4033] text-sm">Click to read preview →</p>
             </div>
         </div>
     </section>
+
+    <!-- MODALS -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button onclick="closeModal()" class="float-right text-4xl leading-none text-gray-400 hover:text-black">&times;</button>
+            <div id="modal-content" class="pt-6"></div>
+        </div>
+    </div>
 
     <!-- SALES SECTION -->
     <section id="get" class="max-w-5xl mx-auto px-6 py-20">
         <div class="text-center mb-12">
             <h2 class="heading-serif text-5xl tracking-tighter">Ready to Start Your Journey?</h2>
-            <p class="mt-4 text-2xl">$27 • Instant Access • No Overthinking</p>
+            <p class="mt-4 text-2xl">$27 • Instant Access</p>
         </div>
-
+        <!-- Digital & Physical boxes same as before -->
         <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <!-- Digital -->
             <div class="bg-white rounded-3xl p-10 text-[#0F2C1F] text-center">
                 <i class="fa-solid fa-download text-5xl mb-6"></i>
-                <h3 class="text-3xl font-bold mb-2">Digital PDF Version</h3>
+                <h3 class="text-3xl font-bold mb-2">Digital PDF</h3>
                 <div class="text-6xl font-bold mb-4">$27</div>
-                <a href="https://gumroad.com/l/resilient-homestead-blueprint" target="_blank"
-                   class="block w-full py-6 bg-[#0F2C1F] text-white font-bold text-xl rounded-3xl hover:bg-black">
-                    Buy & Download Instantly
-                </a>
+                <a href="https://gumroad.com/l/resilient-homestead-blueprint" target="_blank" class="block w-full py-6 bg-[#0F2C1F] text-white font-bold text-xl rounded-3xl">Buy & Download Instantly</a>
             </div>
-
-            <!-- Physical (placeholder) -->
             <div class="bg-white/10 border border-white/30 rounded-3xl p-10 text-center">
                 <i class="fa-solid fa-book text-5xl mb-6"></i>
                 <h3 class="text-3xl font-bold mb-2">Physical Paperback</h3>
                 <div class="text-6xl font-bold mb-4 text-white/70">$47</div>
-                <a href="#" class="block w-full py-6 border border-white/60 text-white font-bold text-xl rounded-3xl hover:bg-white/10">
-                    Notify Me When Ready
-                </a>
+                <a href="#" class="block w-full py-6 border border-white/60 text-white font-bold text-xl rounded-3xl">Notify Me When Ready</a>
             </div>
         </div>
-
-        <p class="text-center text-sm mt-8 text-white/60">60-day money-back guarantee • Secure checkout</p>
     </section>
 
     <footer class="text-center py-12 text-white/50 text-sm">
-        © 2026 Resilient Homestead Blueprint • Built with faith, dirt, and determination
+        © 2026 Resilient Homestead Blueprint
     </footer>
 
+    <script>
+        function openModal(n) {
+            const content = document.getElementById('modal-content');
+            const texts = {
+                1: `<h2 class="text-3xl font-bold mb-6">1. Taking the Leap into the Unknown</h2><p class="text-lg leading-relaxed">Guided by faith when everything felt uncertain. How I stepped out and started a completely new life on the land despite fear and doubt...</p><p class="mt-8 text-sm text-gray-600">This is only a preview. The full chapter shares the exact steps, mindset shifts, and scriptures that helped me take action.</p>`,
+                2: `<h2 class="text-3xl font-bold mb-6">2. Adjusting to a New Way of Living</h2><p class="text-lg leading-relaxed">Discovering true self-sustainability and finding peace in simpler, land-based living after years of a different lifestyle...</p>`,
+                3: `<h2 class="text-3xl font-bold mb-6">3. Tribulations of Life</h2><p class="text-lg leading-relaxed">Navigating relationship needs, grief, loneliness, and daily struggles without losing focus on what matters most...</p>`,
+                4: `<h2 class="text-3xl font-bold mb-6">4. God Is Always in Control</h2><p class="text-lg leading-relaxed">Powerful faith lessons that kept me grounded through every storm and challenge...</p>`,
+                5: `<h2 class="text-3xl font-bold mb-6">5. Settling into God’s Promises</h2><p class="text-lg leading-relaxed">Building a legacy and living out His promises daily...</p>`
+            };
+            content.innerHTML = texts[n];
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
