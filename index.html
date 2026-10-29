@@ -208,7 +208,7 @@
     <script>
         if(/[?&]contact=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){var m=location.search.match(/[?&]from=([^&]*)/);openContact(m?decodeURIComponent(m[1]):'');history.replaceState(null,'',location.pathname+location.hash)})}
         function openContact(f){document.getElementById('interested-in').value=(typeof f==='string'&&f)?f:'Not specified';document.getElementById('source').value=srcOf(f);document.getElementById('contact').style.display='flex'}
-        function srcOf(f){f=(typeof f==='string')?f:'';if(f==='PDF'||f==='Kindle'||f==='Paperback')return f;if(f.indexOf('Bundle')===0){if(/Kindle/.test(f))return 'Bundle Kindle+Paperback';if(/PDF/.test(f))return 'Bundle PDF+Paperback'}return 'Contact'}
+        function srcOf(f){f=(typeof f==='string')?f:'';if(f==='PDF'||f==='Kindle'||f==='Paperback')return f;if(f.indexOf('Bundle')===0){if(/Kindle/.test(f))return 'Bundle Kindle+Paperback';if(/PDF/.test(f))return 'Bundle PDF+Paperback'}if(f.indexOf('Coming Soon')===0)return 'Coming Soon';return 'Contact'}
         function closeContact(){document.getElementById('contact').style.display='none';var f=document.getElementById('contact-form');f.reset();f.style.display='';document.getElementById('contact-sent').style.display='none'}
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()});
         if(/[?&]contacted=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){document.getElementById('contact-form').style.display='none';document.getElementById('contact-sent').style.display='block';openContact();history.replaceState(null,'',location.pathname+location.hash)})}
