@@ -191,6 +191,7 @@
             <h3 id="contact-title" class="text-2xl font-bold mb-4 mt-2">Contact us</h3>
             <form id="contact-form" action="https://formsubmit.co/xpandale@gmail.com" method="POST" class="space-y-3">
                 <input type="hidden" name="Interested in" id="interested-in" value="">
+                <input type="hidden" name="source" id="source" value="Contact">
                 <input type="hidden" name="_subject" value="New message from book site">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
@@ -206,7 +207,8 @@
     </div>
     <script>
         if(/[?&]contact=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){var m=location.search.match(/[?&]from=([^&]*)/);openContact(m?decodeURIComponent(m[1]):'');history.replaceState(null,'',location.pathname+location.hash)})}
-        function openContact(f){document.getElementById('interested-in').value=(typeof f==='string'&&f)?f:'Not specified';document.getElementById('contact').style.display='flex'}
+        function openContact(f){document.getElementById('interested-in').value=(typeof f==='string'&&f)?f:'Not specified';document.getElementById('source').value=srcOf(f);document.getElementById('contact').style.display='flex'}
+        function srcOf(f){f=(typeof f==='string')?f:'';if(f==='PDF'||f==='Kindle'||f==='Paperback')return f;if(f.indexOf('Bundle')===0){if(/Kindle/.test(f))return 'Bundle Kindle+Paperback';if(/PDF/.test(f))return 'Bundle PDF+Paperback'}return 'Contact'}
         function closeContact(){document.getElementById('contact').style.display='none';var f=document.getElementById('contact-form');f.reset();f.style.display='';document.getElementById('contact-sent').style.display='none'}
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()});
         if(/[?&]contacted=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){document.getElementById('contact-form').style.display='none';document.getElementById('contact-sent').style.display='block';openContact();history.replaceState(null,'',location.pathname+location.hash)})}
