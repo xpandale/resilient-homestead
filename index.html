@@ -28,7 +28,7 @@
             </div>
             <div class="flex items-center gap-x-6">
             <a href="chapter-1.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#D2B48C] hover:bg-amber-200 text-[#0F2C1F] font-bold rounded-2xl transition"><i class="fa-solid fa-book-open"></i>Read Free Chapter 1</a>
-            <button type="button" onclick="openInterest()" class="px-5 py-3 border-2 border-[#D2B48C] text-[#D2B48C] hover:bg-[#D2B48C] hover:text-[#0F2C1F] font-semibold rounded-2xl transition">Coming Soon</button>
+            <button type="button" onclick="openInterest('Coming Soon (top menu)')" class="px-5 py-3 border-2 border-[#D2B48C] text-[#D2B48C] hover:bg-[#D2B48C] hover:text-[#0F2C1F] font-semibold rounded-2xl transition">Coming Soon</button>
             </div>
         </div>
     </nav>
@@ -42,7 +42,7 @@
         <div class="inline-block max-w-xl px-10 py-6 bg-[#D2B48C] text-[#0F2C1F] rounded-3xl">
             <div class="font-semibold text-lg"><i class="fa-solid fa-hammer mr-2"></i>Coming Soon · Under Development</div>
             <div class="font-bold text-2xl mt-1">Currently Unavailable for Purchase</div>
-            <button type="button" onclick="openInterest()" class="mt-4 px-6 py-3 bg-[#0F2C1F] text-white font-semibold rounded-2xl hover:bg-[#1a4030]">Coming Soon – Learn More</button>
+            <button type="button" onclick="openInterest('Coming Soon (main banner)')" class="mt-4 px-6 py-3 bg-[#0F2C1F] text-white font-semibold rounded-2xl hover:bg-[#1a4030]">Coming Soon – Learn More</button>
         </div>
         <p class="mt-6"><a href="chapter-1.html" class="text-[#D2B48C] underline text-lg">Read Chapter 1 free: Sight Unseen →</a></p>
     </header>
@@ -109,7 +109,7 @@
                 <div class="text-sm font-semibold mb-1 opacity-80">Regular price</div>
                 <div class="text-xs font-semibold mb-3 opacity-80">Available for purchase when the book is ready</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Coming Soon</button>
-                <button type="button" onclick="openInterest()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">I'm Interested</button>
+                <button type="button" onclick="openInterest('PDF')" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">I'm Interested</button>
             </div>
             <div class="bg-white rounded-3xl p-6 text-[#0F2C1F] text-center">
                 <i class="fa-solid fa-tablet-screen-button text-4xl mb-4"></i>
@@ -118,7 +118,7 @@
                 <div class="text-sm font-semibold mb-1 opacity-80">Regular price</div>
                 <div class="text-xs font-semibold mb-3 opacity-80">Available for purchase when the book is ready</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Coming Soon</button>
-                <button type="button" onclick="openInterest()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">I'm Interested</button>
+                <button type="button" onclick="openInterest('Kindle')" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">I'm Interested</button>
             </div>
             <div class="bg-white/10 border border-white/30 rounded-3xl p-6 text-center">
                 <i class="fa-solid fa-book text-4xl mb-4"></i>
@@ -127,7 +127,7 @@
                 <div class="text-sm font-semibold mb-1 opacity-80">Regular price</div>
                 <div class="text-xs font-semibold mb-3 opacity-80">Available for purchase when the book is ready</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Coming Soon</button>
-                <button type="button" onclick="openInterest()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">I'm Interested</button>
+                <button type="button" onclick="openInterest('Paperback')" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">I'm Interested</button>
             </div>
         </div>
     
@@ -152,7 +152,7 @@
             </div>
             <div class="w-full md:w-48 shrink-0">
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-[#0F2C1F]/40 text-[#0F2C1F]/50 bg-transparent font-semibold text-sm rounded-2xl cursor-not-allowed">Coming Soon</button>
-                <button type="button" onclick="openInterest()" class="block w-full py-4 bg-[#0F2C1F] text-[#D2B48C] font-bold text-sm px-2 rounded-2xl hover:brightness-105">I'm Interested</button>
+                <button type="button" onclick="openInterest('Bundle: '+document.getElementById('bundle-name').textContent)" class="block w-full py-4 bg-[#0F2C1F] text-[#D2B48C] font-bold text-sm px-2 rounded-2xl hover:brightness-105">I'm Interested</button>
             </div>
         </div>
         <p class="text-center text-sm mt-3 opacity-80">Bundles: available for purchase when the book is ready</p>
@@ -169,11 +169,11 @@
             <button type="button" onclick="closeInterest()" aria-label="Close" class="absolute top-3 right-5 text-4xl leading-none text-gray-400 hover:text-black">&times;</button>
             <h3 id="interest-title" class="text-2xl font-bold mb-3 mt-4">Thanks for your interest!</h3>
             <p class="text-[#5c4033] mb-2">The Resilient Homestead Blueprint will be available soon.</p>
-            <p class="text-[#5c4033] text-sm mt-3">Want to reach us? <a href="#" onclick="closeInterest();openContact();return false" class="font-bold underline text-[#0F2C1F] hover:text-[#b8860b]">Leave us a message</a></p>
+            <p class="text-[#5c4033] text-sm mt-3">Want to reach us? <a href="#" onclick="closeInterest();openContact(interestFrom);return false" class="font-bold underline text-[#0F2C1F] hover:text-[#b8860b]">Leave us a message</a></p>
         </div>
     </div>
     <script>
-        function openInterest(){document.getElementById('interest').style.display='flex'}
+        var interestFrom='';function openInterest(f){interestFrom=f||'';document.getElementById('interest').style.display='flex'}
         function closeInterest(){document.getElementById('interest').style.display='none'}
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeInterest()});
     </script>
@@ -189,6 +189,7 @@
             <button type="button" onclick="closeContact()" aria-label="Close" class="absolute top-3 right-5 text-4xl leading-none text-gray-400 hover:text-black">&times;</button>
             <h3 id="contact-title" class="text-2xl font-bold mb-4 mt-2">Contact us</h3>
             <form id="contact-form" action="https://formsubmit.co/xpandale@gmail.com" method="POST" class="space-y-3">
+                <input type="hidden" name="Interested in" id="interested-in" value="">
                 <input type="hidden" name="_subject" value="New message from book site">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_captcha" value="false">
@@ -203,8 +204,8 @@
         </div>
     </div>
     <script>
-        if(/[?&]contact=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){openContact();history.replaceState(null,'',location.pathname+location.hash)})}
-        function openContact(){document.getElementById('contact').style.display='flex'}
+        if(/[?&]contact=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){var m=location.search.match(/[?&]from=([^&]*)/);openContact(m?decodeURIComponent(m[1]):'');history.replaceState(null,'',location.pathname+location.hash)})}
+        function openContact(f){document.getElementById('interested-in').value=(typeof f==='string'&&f)?f:'Not specified';document.getElementById('contact').style.display='flex'}
         function closeContact(){document.getElementById('contact').style.display='none';var f=document.getElementById('contact-form');f.reset();f.style.display='';document.getElementById('contact-sent').style.display='none'}
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()});
         if(/[?&]contacted=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){document.getElementById('contact-form').style.display='none';document.getElementById('contact-sent').style.display='block';openContact();history.replaceState(null,'',location.pathname+location.hash)})}
