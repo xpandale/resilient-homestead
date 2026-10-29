@@ -141,7 +141,7 @@
         <div class="text-center mb-10">
             <h2 class="text-4xl font-bold tracking-tighter" style="font-family:'Playfair Display',Georgia,serif">Reserve Your Copy</h2>
             <p class="mt-4 text-xl">The book isn't available for purchase yet. Reserve now and lock in 25% off when it launches. Join the waitlist and we'll email you when the book is ready to buy, at your early-bird price.</p>
-            <p class="mt-3 text-lg font-semibold">Early-bird price for the first two months after launch, then full price.</p>
+            <p class="mt-3 text-lg font-semibold">Early-bird price for the first two months after launch. After that, the book is available at full price.</p>
         </div>
         <div class="text-center mb-8">
             <span class="inline-block px-8 py-3 bg-[#D2B48C] text-[#0F2C1F] font-semibold text-lg rounded-2xl"><i class="fa-solid fa-hammer mr-2"></i>Coming Soon · Under Development</span>
@@ -156,6 +156,7 @@
                 <div class="inline-block text-sm font-bold px-3 py-1 rounded-full bg-[#0F2C1F] text-[#D2B48C] mb-4">Early bird: 25% off</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
                 <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-2 mt-2 border border-dashed border-gray-400 text-gray-500 bg-transparent text-sm rounded-2xl cursor-not-allowed">Order at Full Price ($17.99) – Only Available 2 Months After Launch</button>
             </div>
             <div class="bg-white rounded-3xl p-6 text-[#0F2C1F] text-center">
                 <i class="fa-solid fa-tablet-screen-button text-4xl mb-4"></i>
@@ -166,6 +167,7 @@
                 <div class="inline-block text-sm font-bold px-3 py-1 rounded-full bg-[#0F2C1F] text-[#D2B48C] mb-4">Early bird: 25% off</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
                 <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-2 mt-2 border border-dashed border-gray-400 text-gray-500 bg-transparent text-sm rounded-2xl cursor-not-allowed">Order at Full Price ($9.99) – Only Available 2 Months After Launch</button>
             </div>
             <div class="bg-white/10 border border-white/30 rounded-3xl p-6 text-center">
                 <i class="fa-solid fa-book text-4xl mb-4"></i>
@@ -176,6 +178,7 @@
                 <div class="inline-block text-sm font-bold px-3 py-1 rounded-full bg-[#D2B48C] text-[#0F2C1F] mb-4">Early bird: 25% off</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
                 <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-2 mt-2 border border-dashed border-gray-400 text-gray-500 bg-transparent text-sm rounded-2xl cursor-not-allowed">Order at Full Price ($27.99) – Only Available 2 Months After Launch</button>
             </div>
         </div>
     
@@ -201,11 +204,12 @@
             <div class="w-full md:w-48 shrink-0">
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-[#0F2C1F]/40 text-[#0F2C1F]/50 bg-transparent font-semibold text-sm rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
                 <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#0F2C1F] text-[#D2B48C] font-bold text-sm px-2 rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-2 mt-2 border border-dashed border-[#0F2C1F]/40 text-[#0F2C1F]/60 bg-transparent text-sm rounded-2xl cursor-not-allowed">Order at Full Price (<span id="bundle-full">$36.99</span>) – Only Available 2 Months After Launch</button>
             </div>
         </div>
         <script>
         var bundles=[["PDF + Paperback","$36.99","$27.74"],["Paperback + Kindle eBook","$32.99","$24.74"]],bi=0;
-        function bundleStep(d){bi=(bi+d+bundles.length)%bundles.length;var b=bundles[bi];document.getElementById('bundle-name').textContent=b[0];document.getElementById('bundle-reg').textContent=b[1];document.getElementById('bundle-early').textContent=b[2];}
+        function bundleStep(d){bi=(bi+d+bundles.length)%bundles.length;var b=bundles[bi];document.getElementById('bundle-name').textContent=b[0];document.getElementById('bundle-reg').textContent=b[1];document.getElementById('bundle-early').textContent=b[2];document.getElementById('bundle-full').textContent=b[1];}
         </script>
     </section>
     </main>
