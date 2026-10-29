@@ -6,6 +6,7 @@
     <title>Chapter 1: Sight Unseen | The Resilient Homestead Blueprint</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        html{scroll-behavior:smooth}
         body { font-family: 'Inter', system-ui, sans-serif; background-color: #0F2C1F; }
         .book { background:#fff; color:#111; max-width:8.5in; margin:0 auto; padding:1in; box-shadow:0 25px 50px -12px rgb(0 0 0 / .5); }
         .book h1 { font-size:2em; font-weight:bold; margin:.67em 0; }
@@ -131,15 +132,15 @@
         </article>
         <div class="max-w-3xl mx-auto mt-12 p-10 bg-white rounded-3xl text-[#0F2C1F] text-center">
             <h2 class="text-3xl font-bold mb-4" style="font-family:'Playfair Display',Georgia,serif">Enjoyed Chapter 1?</h2>
-            <p class="mb-6 text-lg">The rest of the story is in The Resilient Homestead Blueprint.</p>
-            <a href="index.html#get" class="inline-block px-10 py-4 bg-[#0F2C1F] text-white font-bold rounded-3xl">Get the Blueprint – $17.99</a>
+            <p class="mb-6 text-lg">The rest of the story is in The Resilient Homestead Blueprint, coming soon. Reserve your copy at the early-bird price.</p>
+            <a href="#get" class="inline-block px-10 py-4 bg-[#0F2C1F] text-white font-bold rounded-3xl">Reserve at Early-Bird Price – from $7.49</a>
         </div>
 
-    <!-- PURCHASE SECTION (mirrors index.html #get) -->
+    <!-- RESERVATION SECTION (book not yet available) -->
     <section id="get" class="max-w-5xl mx-auto px-3 md:px-6 py-16 text-white">
         <div class="text-center mb-10">
             <h2 class="text-4xl font-bold tracking-tighter" style="font-family:'Playfair Display',Georgia,serif">Reserve Your Copy</h2>
-            <p class="mt-4 text-xl">PDF $17.99 &bull; Kindle eBook $9.99 &bull; Paperback $27.99</p>
+            <p class="mt-4 text-xl">The book isn't available for purchase yet. Reserve now and lock in 25% off when it launches. Join the waitlist and we'll email you when the book is ready to buy, at your early-bird price.</p>
         </div>
         <div class="text-center mb-8">
             <span class="inline-block px-8 py-3 bg-[#D2B48C] text-[#0F2C1F] font-semibold text-lg rounded-2xl"><i class="fa-solid fa-hammer mr-2"></i>Coming Soon · Under Development</span>
@@ -148,52 +149,62 @@
             <div class="bg-white rounded-3xl p-6 text-[#0F2C1F] text-center">
                 <i class="fa-solid fa-download text-4xl mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">Digital PDF</h3>
-                <div class="text-4xl font-bold mb-1 line-through opacity-60">$17.99</div>
-                <div class="text-sm font-semibold mb-1">Early bird: 25% off. Sign up now</div>
-                <div class="text-2xl font-bold mb-4">$13.49 <span class="text-sm font-semibold">early bird</span></div>
-                <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#0F2C1F] text-white font-bold text-base rounded-2xl">Notify Me When Ready</button>
+                <div class="text-4xl font-bold">$13.49</div>
+                <div class="text-sm font-semibold mb-1">Early-bird reservation price</div>
+                <div class="text-sm mb-2 text-[#0F2C1F]/70">Regular <span class="line-through">$17.99</span></div>
+                <div class="inline-block text-sm font-bold px-3 py-1 rounded-full bg-[#0F2C1F] text-[#D2B48C] mb-4">Early bird: 25% off</div>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
+                <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
             </div>
             <div class="bg-white rounded-3xl p-6 text-[#0F2C1F] text-center">
                 <i class="fa-solid fa-tablet-screen-button text-4xl mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">Kindle eBook</h3>
-                <div class="text-4xl font-bold mb-1 line-through opacity-60">$9.99</div>
-                <div class="text-sm font-semibold mb-1">Early bird: 25% off. Sign up now</div>
-                <div class="text-2xl font-bold mb-4">$7.49 <span class="text-sm font-semibold">early bird</span></div>
-                <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#0F2C1F] text-white font-bold text-base rounded-2xl">Notify Me When Ready</button>
+                <div class="text-4xl font-bold">$7.49</div>
+                <div class="text-sm font-semibold mb-1">Early-bird reservation price</div>
+                <div class="text-sm mb-2 text-[#0F2C1F]/70">Regular <span class="line-through">$9.99</span></div>
+                <div class="inline-block text-sm font-bold px-3 py-1 rounded-full bg-[#0F2C1F] text-[#D2B48C] mb-4">Early bird: 25% off</div>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
+                <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
             </div>
             <div class="bg-white/10 border border-white/30 rounded-3xl p-6 text-center">
                 <i class="fa-solid fa-book text-4xl mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">Physical Paperback</h3>
-                <div class="text-4xl font-bold mb-1 text-white/70 line-through">$27.99</div>
-                <div class="text-sm font-semibold mb-1">Early bird: 25% off. Sign up now</div>
-                <div class="text-2xl font-bold mb-4">$20.99 <span class="text-sm font-semibold">early bird</span></div>
-                <button type="button" onclick="openNotify()" class="block w-full py-4 border border-white/60 text-white font-bold text-base rounded-2xl hover:bg-white/10">Notify Me When Ready</button>
+                <div class="text-4xl font-bold">$20.99</div>
+                <div class="text-sm font-semibold mb-1">Early-bird reservation price</div>
+                <div class="text-sm mb-2 text-white/80">Regular <span class="line-through">$27.99</span></div>
+                <div class="inline-block text-sm font-bold px-3 py-1 rounded-full bg-[#D2B48C] text-[#0F2C1F] mb-4">Early bird: 25% off</div>
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
+                <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
             </div>
         </div>
     
         <!-- BUNDLE BAR -->
         <div id="bundle" class="max-w-4xl mx-auto mt-8 bg-[#D2B48C] text-[#0F2C1F] rounded-3xl px-6 py-4 flex flex-col md:flex-row items-center gap-4">
-            <div class="flex items-center gap-3 flex-1 min-w-[230px]">
+            <div class="flex items-center gap-3 flex-1 min-w-0">
                 <i class="fa-solid fa-layer-group text-3xl"></i>
                 <div>
                     <div class="font-bold text-lg">Bundle &amp; Save</div>
-                    <div class="text-sm">Early-bird price if you reserve before the book is fully available.</div>
+                    <div class="text-sm">Reserve a bundle now and lock in the early-bird price.</div>
                 </div>
             </div>
             <div class="flex items-center gap-2 bg-white rounded-2xl px-2 py-2">
-                <button type="button" onclick="bundleStep(-1)" class="px-3 text-xl">&#8249;</button>
-                <div id="bundle-name" class="font-semibold w-48 text-center text-sm">PDF + Paperback</div>
-                <button type="button" onclick="bundleStep(1)" class="px-3 text-xl">&#8250;</button>
+                <button type="button" onclick="bundleStep(-1)" class="px-3 text-xl" aria-label="Previous bundle">&#8249;</button>
+                <div id="bundle-name" class="font-semibold w-40 text-center text-sm">PDF + Paperback</div>
+                <button type="button" onclick="bundleStep(1)" class="px-3 text-xl" aria-label="Next bundle">&#8250;</button>
             </div>
             <div class="text-center">
-                <div class="text-sm line-through opacity-70" id="bundle-reg">$36.99</div>
-                <div class="text-2xl font-bold" id="bundle-early">$27.74 <span class="text-sm font-semibold">early bird</span></div>
+                <div class="text-3xl font-bold" id="bundle-early">$27.74</div>
+                <div class="text-xs font-semibold">Early-bird reservation price</div>
+                <div class="text-sm opacity-80">Regular <span class="line-through" id="bundle-reg">$36.99</span></div>
             </div>
-            <button type="button" onclick="openNotify()" class="px-6 py-3 bg-[#0F2C1F] text-white font-semibold rounded-2xl">Reserve My Bundle</button>
+            <div class="w-full md:w-48 shrink-0">
+                <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-[#0F2C1F]/40 text-[#0F2C1F]/50 bg-transparent font-semibold text-sm rounded-2xl cursor-not-allowed">Not Available for Purchase</button>
+                <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#0F2C1F] text-[#D2B48C] font-bold text-sm px-2 rounded-2xl hover:brightness-105">Available for Early-Bird Waitlist Price</button>
+            </div>
         </div>
         <script>
         var bundles=[["PDF + Paperback","$36.99","$27.74"],["Paperback + Kindle eBook","$32.99","$24.74"]],bi=0;
-        function bundleStep(d){bi=(bi+d+bundles.length)%bundles.length;var b=bundles[bi];document.getElementById('bundle-name').textContent=b[0];document.getElementById('bundle-reg').textContent=b[1];document.getElementById('bundle-early').textContent=b[2]+' early bird';}
+        function bundleStep(d){bi=(bi+d+bundles.length)%bundles.length;var b=bundles[bi];document.getElementById('bundle-name').textContent=b[0];document.getElementById('bundle-reg').textContent=b[1];document.getElementById('bundle-early').textContent=b[2];}
         </script>
     </section>
     </main>
