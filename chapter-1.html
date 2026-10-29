@@ -194,13 +194,13 @@
                 <div class="text-sm opacity-80 line-through" id="bundle-reg">$42.98</div>
                 <div class="text-3xl font-bold" id="bundle-price">$32.24</div>
                 <div class="text-xs font-semibold">Bundle price (25% off)</div>
-                <div class="text-xs mt-1 mx-auto leading-tight" style="max-width:10rem">Available for purchase when the book is ready</div>
             </div>
             <div class="w-full md:w-48 shrink-0">
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-[#0F2C1F]/40 text-[#0F2C1F]/50 bg-transparent font-semibold text-sm rounded-2xl cursor-not-allowed">Coming Soon</button>
                 <button type="button" onclick="openInterest()" class="block w-full py-4 bg-[#0F2C1F] text-[#D2B48C] font-bold text-sm px-2 rounded-2xl hover:brightness-105">I'm Interested</button>
             </div>
         </div>
+        <p class="text-center text-sm mt-3 opacity-80">Bundles: available for purchase when the book is ready</p>
         <script>
         var bundles=[["PDF + Paperback","$42.98","$32.24"],["Paperback + Kindle eBook","$37.98","$28.49"]],bi=0;
         function bundleStep(d){bi=(bi+d+bundles.length)%bundles.length;var b=bundles[bi];document.getElementById('bundle-name').textContent=b[0];document.getElementById('bundle-reg').textContent=b[1];document.getElementById('bundle-price').textContent=b[2];}
