@@ -189,14 +189,13 @@
         <div class="bg-white text-[#0F2C1F] rounded-3xl p-8 w-full max-w-md relative" role="dialog" aria-modal="true" aria-labelledby="contact-title">
             <button type="button" onclick="closeContact()" aria-label="Close" class="absolute top-3 right-5 text-4xl leading-none text-gray-400 hover:text-black">&times;</button>
             <h3 id="contact-title" class="text-2xl font-bold mb-4 mt-2">Contact us</h3>
-            <form id="contact-form" action="https://formsubmit.co/xpandale@gmail.com" method="POST" class="space-y-3">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-3">
+                <input type="hidden" name="access_key" value="6f8b3f64-5fe9-452a-ac24-455331b2cf59">
                 <input type="hidden" name="Interested in" id="interested-in" value="">
                 <input type="hidden" name="source" id="source" value="Contact">
-                <input type="hidden" name="_subject" value="New message from book site">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://xpandale.github.io/resilient-homestead/?contacted=1">
-                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="subject" value="New message from book site">
+                <input type="hidden" name="from_name" value="Book site">
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
                 <label class="block text-sm font-semibold">Name<input name="name" required class="mt-1 w-full border border-gray-300 rounded-xl px-3 py-2 font-normal"></label>
                 <label class="block text-sm font-semibold">Email address<input type="email" name="email" required class="mt-1 w-full border border-gray-300 rounded-xl px-3 py-2 font-normal"></label>
                 <label class="block text-sm font-semibold">Message<textarea name="message" rows="4" required class="mt-1 w-full border border-gray-300 rounded-xl px-3 py-2 font-normal"></textarea></label>
@@ -212,6 +211,7 @@
         function closeContact(){document.getElementById('contact').style.display='none';var f=document.getElementById('contact-form');f.reset();f.style.display='';document.getElementById('contact-sent').style.display='none'}
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()});
         if(/[?&]contacted=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){document.getElementById('contact-form').style.display='none';document.getElementById('contact-sent').style.display='block';openContact();history.replaceState(null,'',location.pathname+location.hash)})}
+        document.getElementById('contact-form').addEventListener('submit',function(e){e.preventDefault();var f=this,b=f.querySelector('button[type=submit]');b.disabled=true;b.textContent='Sending...';fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){if(d.success){f.style.display='none';document.getElementById('contact-sent').style.display='block'}else{throw 0}}).catch(function(){alert('Sorry, the message could not be sent. Please try again in a few minutes.')}).finally(function(){b.disabled=false;b.textContent='Send Message'})});
     </script>
 
     <script>
