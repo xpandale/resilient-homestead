@@ -141,7 +141,7 @@
         <div class="text-center mb-10">
             <h2 class="text-4xl font-bold tracking-tighter" style="font-family:'Playfair Display',Georgia,serif">Get the Book</h2>
             <p class="mt-4 text-xl">The book isn't available for purchase yet. It will go on sale once it's fully ready. Sign up and we'll email you as soon as it's ready to buy.</p>
-            <p class="mt-3 text-lg font-semibold">PDF $17.99 • Kindle eBook $9.99 • Paperback $27.99 · Bundles save 25%</p>
+            <p class="mt-3 text-lg font-semibold">PDF $14.99 • Kindle eBook $9.99 • Paperback $27.99 · Bundles save 25%</p>
         </div>
         <div class="text-center mb-8">
             <span class="inline-block px-8 py-3 bg-[#D2B48C] text-[#0F2C1F] font-semibold text-lg rounded-2xl"><i class="fa-solid fa-hammer mr-2"></i>Coming Soon · Under Development</span>
@@ -150,7 +150,7 @@
             <div class="bg-white rounded-3xl p-6 text-[#0F2C1F] text-center">
                 <i class="fa-solid fa-download text-4xl mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">Digital PDF</h3>
-                <div class="text-5xl font-bold mb-1 ">$17.99</div>
+                <div class="text-5xl font-bold mb-1 ">$14.99</div>
                 <div class="text-sm font-semibold mb-4 opacity-80">Regular price</div>
                 <button type="button" disabled aria-disabled="true" tabindex="-1" class="block w-full py-3 mb-2 border-2 border-gray-400 text-gray-400 bg-transparent font-semibold text-base rounded-2xl cursor-not-allowed">Coming Soon</button>
                 <button type="button" onclick="openNotify()" class="block w-full py-4 bg-[#D2B48C] text-[#0F2C1F] font-bold text-base rounded-2xl hover:brightness-105">Notify Me When Ready</button>
@@ -188,8 +188,8 @@
                 <button type="button" onclick="bundleStep(1)" class="px-3 text-xl" aria-label="Next bundle">&#8250;</button>
             </div>
             <div class="text-center">
-                <div class="text-sm opacity-80 line-through" id="bundle-reg">$45.98</div>
-                <div class="text-3xl font-bold" id="bundle-price">$34.49</div>
+                <div class="text-sm opacity-80 line-through" id="bundle-reg">$42.98</div>
+                <div class="text-3xl font-bold" id="bundle-price">$32.24</div>
                 <div class="text-xs font-semibold">Bundle price (25% off)</div>
             </div>
             <div class="w-full md:w-48 shrink-0">
@@ -198,7 +198,7 @@
             </div>
         </div>
         <script>
-        var bundles=[["PDF + Paperback","$45.98","$34.49"],["Paperback + Kindle eBook","$37.98","$28.49"]],bi=0;
+        var bundles=[["PDF + Paperback","$42.98","$32.24"],["Paperback + Kindle eBook","$37.98","$28.49"]],bi=0;
         function bundleStep(d){bi=(bi+d+bundles.length)%bundles.length;var b=bundles[bi];document.getElementById('bundle-name').textContent=b[0];document.getElementById('bundle-reg').textContent=b[1];document.getElementById('bundle-price').textContent=b[2];}
         </script>
     </section>
