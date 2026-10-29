@@ -169,6 +169,7 @@
             <button type="button" onclick="closeInterest()" aria-label="Close" class="absolute top-3 right-5 text-4xl leading-none text-gray-400 hover:text-black">&times;</button>
             <h3 id="interest-title" class="text-2xl font-bold mb-3 mt-4">Thanks for your interest!</h3>
             <p class="text-[#5c4033] mb-2">The Resilient Homestead Blueprint will be available soon.</p>
+            <p class="text-[#5c4033] text-sm mt-3">Want to reach us? <a href="#" onclick="closeInterest();openContact();return false" class="font-bold underline text-[#0F2C1F] hover:text-[#b8860b]">Leave us a message</a></p>
         </div>
     </div>
     <script>
@@ -202,6 +203,7 @@
         </div>
     </div>
     <script>
+        if(/[?&]contact=1/.test(location.search)){window.addEventListener('DOMContentLoaded',function(){openContact();history.replaceState(null,'',location.pathname+location.hash)})}
         function openContact(){document.getElementById('contact').style.display='flex'}
         function closeContact(){document.getElementById('contact').style.display='none';var f=document.getElementById('contact-form');f.reset();f.style.display='';document.getElementById('contact-sent').style.display='none'}
         document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()});
